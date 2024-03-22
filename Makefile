@@ -6,7 +6,7 @@
 #    By: apintus <apintus@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 12:43:39 by apintus           #+#    #+#              #
-#    Updated: 2024/03/15 12:45:40 by apintus          ###   ########.fr        #
+#    Updated: 2024/03/21 15:32:18 by apintus          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ BONUS_NAME = pipex_bonus
 ## SOURCES
 
 SRCS = srcs/main.c\
+		srcs/check_input.c\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -40,7 +41,7 @@ LIBFT_PATH = $(LIBFT_DIR)/libft.a
 all : $(NAME) $(LIBFT_PATH)
 
 $(NAME) : $(ARCHIVE) $(LIBFT_PATH)
-	$(CC) $(ARCHIVE) $(LIBFT_PATH) -o $(NAME)
+	$(CC) $(ARCHIVE) $(LIBFT_PATH) -lreadline -o $(NAME)
 
 $(ARCHIVE) : $(OBJS)
 	$(MAKE_LIB) $(ARCHIVE) $(OBJS)
